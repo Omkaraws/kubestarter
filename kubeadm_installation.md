@@ -21,8 +21,8 @@ sudo apt update
 sudo apt-get install -y apt-transport-https ca-certificates curl
 sudo apt install docker.io -y
 
-sudo systemctl enable --now docker # enable and start in single command.
-
+sudo systemctl enable --now docker # enable and start in single command
+sudo usermod -aG docker $USER && newgrp docker
 # Adding GPG keys.
 curl -fsSL "https://packages.cloud.google.com/apt/doc/apt-key.gpg" | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/kubernetes-archive-keyring.gpg
 
